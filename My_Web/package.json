@@ -1,0 +1,20 @@
+{
+  "name": "webdev-pro",
+  "version": "1.0.0",
+  "description": "Plataforma de servicios de desarrollo web",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install-all": "npm install && cd backend && npm install",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && python -m http.server 3000"
+  },
+  "keywords": [
+    "webdev",
+    "services",
+    "full-stack"
+  ],
+  "author": "WebDev Pro",
+  "license": "ISC"
+}

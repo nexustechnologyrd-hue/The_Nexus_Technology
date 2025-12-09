@@ -1,0 +1,470 @@
+/* ==========================================
+   ESTILOS PÁGINA COTIZAR - cotizar.html
+   ========================================== */
+
+/* Precios Section */
+.precios {
+    background: var(--light-bg);
+    padding: 80px 20px;
+}
+
+.precios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.precio-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.precio-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.precio-card:hover::after {
+    left: 100%;
+}
+
+.precio-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.15);
+    transform: translateY(-8px);
+}
+
+.precio-card.featured {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(251, 191, 36, 0.08) 100%);
+    transform: scale(1.05);
+}
+
+.precio-card.featured:hover {
+    box-shadow: 0 15px 40px rgba(249, 115, 22, 0.25);
+}
+
+.badge-popular {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.precio-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.precio {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin: 1rem 0;
+}
+
+.periodo {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.precio-features {
+    list-style: none;
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    flex-grow: 1;
+}
+
+.precio-features li {
+    padding: 0.75rem 0;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.precio-features li:before {
+    content: "✓";
+    display: inline-block;
+    width: 25px;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.precio-features li:has(+ li:contains("✗"))::after,
+.precio-features li:contains("✗")::before {
+    content: "✗";
+    color: #d1d5db;
+}
+
+.precio-card button {
+    width: 100%;
+    margin-top: auto;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.precio-card.featured button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.precio-card button:hover {
+    font-weight: 700;
+}
+
+/* Quotation Form Section */
+.form-section {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.form-section h2 {
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* Form Steps */
+.form-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.step {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--border-color);
+}
+
+.step.active {
+    border-left-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+}
+
+.step-number {
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.step h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Personal Info Form Group */
+.personal-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.personal-info label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.personal-info input,
+.personal-info select,
+.personal-info textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.personal-info input:focus,
+.personal-info select:focus,
+.personal-info textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.personal-info textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Project Details */
+.project-details {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.project-details h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.detail-group {
+    margin-bottom: 1.5rem;
+}
+
+.detail-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.detail-group input,
+.detail-group select,
+.detail-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.detail-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Additional Services */
+.additional-services {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.additional-services h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.service-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.service-checkbox:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(20, 184, 166, 0.05) 100%);
+}
+
+.service-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.service-checkbox label {
+    cursor: pointer;
+    margin: 0;
+    flex: 1;
+}
+
+/* Terms and Conditions */
+.terms-section {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.terms-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.25rem;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.terms-checkbox label {
+    cursor: pointer;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #6b7280;
+    margin: 0;
+}
+
+.terms-checkbox label a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terms-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+/* Form Actions */
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-actions button {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.form-actions button.secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.form-actions button.secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Summary Section */
+.summary-section {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.summary-section h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .precios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .precio-card.featured {
+        transform: scale(1);
+    }
+
+    .form-section {
+        padding: 1.5rem;
+    }
+
+    .form-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-info {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .precios-grid {
+        gap: 1rem;
+    }
+
+    .precio-card {
+        padding: 1.5rem;
+    }
+
+    .precio {
+        font-size: 2rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+
+    .summary-section {
+        padding: 1.5rem;
+    }
+}

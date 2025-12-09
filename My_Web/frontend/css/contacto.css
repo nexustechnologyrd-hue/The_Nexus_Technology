@@ -1,0 +1,192 @@
+/* ==========================================
+   ESTILOS PÁGINA CONTACTO - contacto.html
+   ========================================== */
+
+/* Contacto Section */
+.contacto {
+    background: white;
+}
+
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.contacto-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-items {
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.info-item div h4 {
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.info-item div p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Social Section */
+.social-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.social-section h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 1.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transition: left 0.4s ease;
+    pointer-events: none;
+}
+
+.social-icons a:hover::after {
+    left: 100%;
+}
+
+.social-icons a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Mapa Section */
+.mapa-section {
+    background: white;
+    padding: 80px 20px;
+}
+
+.mapa-placeholder {
+    background: var(--light-bg);
+    border-radius: 10px;
+    padding: 80px 20px;
+    text-align: center;
+    border: 2px dashed var(--border-color);
+}
+
+.mapa-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: var(--light-bg);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.faq-item:hover::after {
+    left: 100%;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.1);
+}
+
+.faq-item h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacto-content {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

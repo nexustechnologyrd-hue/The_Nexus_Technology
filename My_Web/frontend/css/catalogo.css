@@ -1,0 +1,96 @@
+/* ==========================================
+   ESTILOS PÁGINA CATÁLOGO - catalogo.html
+   ========================================== */
+
+/* Catálogo Section */
+.catalogo {
+    background: white;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.catalog-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.catalog-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    transition: left 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.catalog-item:hover::after {
+    left: 100%;
+}
+
+.catalog-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(249, 115, 22, 0.15);
+    transform: translateY(-5px);
+}
+
+.catalog-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.catalog-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.catalog-item p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.category-badge.frontend {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+}
+
+.category-badge.backend {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00bcd4;
+}
+
+.category-badge.database {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+}

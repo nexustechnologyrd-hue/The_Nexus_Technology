@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización - Nexus Technology</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cotizar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <img src="../img/nombre.png" alt="Nexus Technology" class="brand-name-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="cotizar.html" class="btn-cotizar">Cotizar</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Solicitar Cotización</h1>
+            <p>Cuéntanos los detalles de tu proyecto y recibirás una cotización personalizada</p>
+        </div>
+    </section>
+
+    <!-- Planes de Precios -->
+    <section class="precios">
+        <div class="container">
+            <h2 class="section-title">Planes Disponibles</h2>
+            <div class="precios-grid">
+                <div class="precio-card">
+                    <h3>Básico</h3>
+                    <div class="precio">$150</div>
+                    <p class="periodo">desde</p>
+                    <ul class="precio-features">
+                        <li>✓ Landing page</li>
+                        <li>✓ Diseño responsive</li>
+                        <li>✓ Formulario simple</li>
+                        <li>✓ Mantenimiento básico</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="selectPlan('basico')">Seleccionar</button>
+                </div>
+
+                <div class="precio-card featured">
+                    <span class="badge-popular">Más Popular</span>
+                    <h3>Profesional</h3>
+                    <div class="precio">$400</div>
+                    <p class="periodo">desde</p>
+                    <ul class="precio-features">
+                        <li>✓ Sitio web completo</li>
+                        <li>✓ Sistema básico</li>
+                        <li>✓ Base de datos simple</li>
+                        <li>✓ Usuarios y panel</li>
+                        <li>✓ Soporte 3 meses</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('profesional')">Seleccionar</button>
+                </div>
+
+                <div class="precio-card">
+                    <h3>Premium</h3>
+                    <div class="precio">Consultar</div>
+                    <p class="periodo">según proyecto</p>
+                    <ul class="precio-features">
+                        <li>✓ Desarrollo personalizado</li>
+                        <li>✓ Integración completa</li>
+                        <li>✓ Panel avanzado</li>
+                        <li>✓ Soporte extendido</li>
+                        <li>✓ Mantenimiento incluido</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="selectPlan('premium')">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cotización Form -->
+    <section class="cotizacion-section">
+        <div class="container">
+            <div class="cotizacion-form-wrapper">
+                <h2 class="section-title">Formulario de Cotización</h2>
+                
+                <form class="cotizacion-form" id="cotizarForm">
+                    <!-- Plan Seleccionado -->
+                    <div class="form-group">
+                        <label for="plan">Plan Seleccionado *</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Elige un plan</option>
+                            <option value="basico">Básico - $500</option>
+                            <option value="profesional">Profesional - $2,500</option>
+                            <option value="empresa">Empresa - Personalizado</option>
+                        </select>
+                    </div>
+
+                    <!-- Información Personal -->
+                    <h3 style="margin-top: 2rem;">Información Personal</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="empresa">Empresa/Nombre del Proyecto *</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+
+                    <!-- Detalles del Proyecto -->
+                    <h3 style="margin-top: 2rem;">Detalles del Proyecto</h3>
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Proyecto *</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Selecciona un tipo</option>
+                            <option value="landing">Landing Page</option>
+                            <option value="ecommerce">E-commerce</option>
+                            <option value="portfolio">Portafolio Web</option>
+                            <option value="social">Red Social</option>
+                            <option value="dashboard">Dashboard/Analytics</option>
+                            <option value="custom">Proyecto Personalizado</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción del Proyecto *</label>
+                        <textarea id="descripcion" name="descripcion" placeholder="Cuéntanos los detalles, objetivos, funcionalidades requeridas..." rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="presupuesto">Presupuesto Estimado</label>
+                        <select id="presupuesto" name="presupuesto">
+                            <option value="">Sin especificar</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-2500">$1,000 - $2,500</option>
+                            <option value="2500-5000">$2,500 - $5,000</option>
+                            <option value="5000+">$5,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deadline">Fecha de Entrega Deseada</label>
+                        <input type="date" id="deadline" name="deadline">
+                    </div>
+
+                    <!-- Servicios Adicionales -->
+                    <h3 style="margin-top: 2rem;">Servicios Adicionales</h3>
+                    
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="servicios" value="seo">
+                            <span>Optimización SEO avanzada</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="servicios" value="email">
+                            <span>Integración de Email Marketing</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="servicios" value="pagos">
+                            <span>Integración de Pasarelas de Pago</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="servicios" value="hosting">
+                            <span>Hosting y Dominio</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="servicios" value="mantenimiento">
+                            <span>Mantenimiento Mensual</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="servicios" value="soporte">
+                            <span>Soporte Prioritario 24/7</span>
+                        </label>
+                    </div>
+
+                    <!-- Notas Adicionales -->
+                    <div class="form-group">
+                        <label for="notas">Notas Adicionales</label>
+                        <textarea id="notas" name="notas" placeholder="Información adicional que consideres importante..." rows="3"></textarea>
+                    </div>
+
+                    <!-- Términos -->
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="terminos" required>
+                            <span>He leído y acepto los términos y condiciones</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="newsletter">
+                            <span>Deseo recibir información sobre ofertas y actualizaciones</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Enviar Cotización</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nexus Technology. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
